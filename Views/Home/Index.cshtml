@@ -1,0 +1,33 @@
+﻿@model DropDownViewModel
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+</div>
+
+
+<!--Aşağıdaki select option drop down olarak görünecektir Drop down içerisinden bir eleman seçilebilir-->
+<select>
+
+    <option value="1">Vestel Klima</option>
+    <option value="2">Vestel Bulaşık Makinası</option>
+    <option value="3">LG Televizyon</option>
+    <option value="4">HP Bilgisayar</option>
+    <option value="5">Samsung Çamaşır Makinası</option>
+    <option value="6">XBox</option>
+
+</select>
+
+
+<form method="post" action="/Home/Index">
+
+    @Html.DropDownListFor()
+            s => s.SelectedCarId
+            , new SelectList(Model.Cars,"Id", "Name")
+            , "Lütfen aracı seçiniz"
+            )
+
+
+    <input type="submit" value="Seçileni gönder">
+
+</form>
