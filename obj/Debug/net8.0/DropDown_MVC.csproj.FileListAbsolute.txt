@@ -28,3 +28,4 @@
 /Users/emrahelis/DropDown_MVC/obj/Debug/net8.0/DropDown_MVC.pdb
 /Users/emrahelis/DropDown_MVC/obj/Debug/net8.0/DropDown_MVC.genruntimeconfig.cache
 /Users/emrahelis/DropDown_MVC/obj/Debug/net8.0/ref/DropDown_MVC.dll
+/Users/emrahelis/DropDown_MVC/obj/Debug/net8.0/DropDown_MVC.sourcelink.json

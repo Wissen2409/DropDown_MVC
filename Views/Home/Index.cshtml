@@ -1,4 +1,4 @@
-﻿@model DropDownViewModel
+﻿@model DropDownModel
 
 <div class="text-center">
     <h1 class="display-4">Welcome</h1>
@@ -18,16 +18,23 @@
 
 </select>
 
+@if (Model != null)
+{
 
-<form method="post" action="/Home/Index">
+    <form method="post" action="/Home/Index">
 
-    @Html.DropDownListFor()
-            s => s.SelectedCarId
-            , new SelectList(Model.Cars,"Id", "Name")
-            , "Lütfen aracı seçiniz"
-            )
+    @Html.DropDownListFor(
+                s => s.SelectedCarId
+                , new SelectList(Model.Cars, "Id", "Name")
+                , "Lütfen aracı seçiniz"
+                )
 
-
+    
     <input type="submit" value="Seçileni gönder">
 
 </form>
+
+
+}
+
+<!--Il ilçe semt dropdownlarını peşpeşe getirecek örnek yazıunız!!-->

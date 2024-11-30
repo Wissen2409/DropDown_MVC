@@ -1,0 +1,58 @@
+@model DropDownViewModel
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+   
+</head>
+
+<body>
+
+
+    @if (Model != null)
+    {
+        <form method="post" action="/Home/GetCities">
+            @Html.DropDownListFor(
+                     s => s.SelectedCityId
+                     , new SelectList(Model.Cities, "Id", "Name")
+                     , "Lütfen İl Seçiniz",new {@class="citiesdropdown"})
+            <input type="submit" value="Seçileni gönder">
+        </form>
+        
+
+        @if (Model.SelectedCityId != 0)
+        {
+
+            <form method="post" action="/Home/GetCities">
+                @Html.DropDownListFor(
+                         s => s.SelectedDistrictId
+                         , new SelectList(Model.Districts, "Id", "Name")
+                         , "Lütfen İlçe Seçiniz")
+                <input type="submit" value="Seçileni gönder">
+            </form>
+
+
+            @if (Model.SelectedDistrictId != 0)
+            {
+
+                <form method="post" action="/Home/GetCities">
+                    @Html.DropDownListFor(
+                             s => s.NeigborhoodId
+                             , new SelectList(Model.Neigborhoods, "Id", "Name")
+                             , "Lütfen Semt Seçiniz")
+                    <input type="submit" value="Seçileni gönder">
+                </form>
+
+            }
+
+        }
+
+    }
+
+</body>
+
+</html>
